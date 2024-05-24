@@ -2,9 +2,13 @@ const express = require("express");
 const app = express();
 
 const PORT = process.env.PORT || 5000;
+
 app.get("/",(req,res)=>{
     res.send("Sending message to client");
 });
+
+const product_routes = require("./routes/product");
+app.use("/api/products",product_routes);
 
 const start = async() =>{
     try {
@@ -15,5 +19,4 @@ const start = async() =>{
         console.log(error); 
     }
 };
-
 start();

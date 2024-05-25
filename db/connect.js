@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 const { options } = require('../routes/product');
 
-uri ="mongodb+srv://admin:admin123@cluster0.zdpa2me.mongodb.net/Cluster0?retryWrites=true&w=majority&appName=Cluster0";
 
-const connectDb = async() =>{
+const connectDb = async(uri) =>{
     try{
         const connect = await mongoose.connect(uri);
         console.log("Database connected:", 

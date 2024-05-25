@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { options } = require('../routes/product');
 
-
 const connectDb = async(uri) =>{
     try{
         const connect = await mongoose.connect(uri);
